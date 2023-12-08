@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+img {
+    object-fit: cover;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+    background-color: $background-light;
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+p {
+    margin: 0px;
+}
+
+
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0px;
+    padding: 0px;
+}

@@ -1,0 +1,64 @@
+.content-onearticle {
+    flex: 1;
+    padding: 2rem 20%;
+
+    .contenaire-article {
+
+        border: 1px solid rgb(129, 129, 129);
+        padding: 5rem 8rem;
+
+        .info-user {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            img {
+                height: 3.2rem;
+                width: 3.2rem; 
+                border-radius: 50%;
+            }
+
+            .li-vide {
+                margin-left: 1rem;
+
+                div {
+                    height: 0.2rem;
+                    width: 0.2rem;
+                    border-radius: 50%;
+                    background-color: rgb(48, 45, 45);
+                }
+            }
+
+            .info-user__nom {
+                margin-left: 1rem;
+            }
+        }
+
+        .article-info {
+            line-height: 2.7rem;
+            font-size: 1.8rem;
+            margin-top: 2rem;
+
+            h3 {
+                font-family: "josefin slab", serif;
+                font-size: 40px;
+                font-weight: 400;
+            }
+
+            .transition {
+                margin-top: 2rem;
+            }
+
+            .image_article_content {
+                width: 100%;
+                margin-top: 1rem;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+
+}

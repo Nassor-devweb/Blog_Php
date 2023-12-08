@@ -1,0 +1,43 @@
+.btn {
+    background-color: white;
+    font-weight: 700;
+    color: $text-color;
+    font-size: 1.6rem;
+    border: 0;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 0px 5px;
+    box-shadow: $box-shadow;
+}
+
+.btn.btn-danger {
+    background-color: $danger;
+    color: $text-color-light;
+    margin-left: 0px;
+    text-decoration: none;
+}
+
+.btn-accueil {
+    margin-right: 0px;
+}
+
+.btn {
+    background-color: $primary-color;
+    color: $text-color-light;
+}
+
+.btn-primary {
+    background-color: $primary-color;
+    color: $text-color-light;
+}
+
+.btn-small {
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn-small12 {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.6rem;
+}

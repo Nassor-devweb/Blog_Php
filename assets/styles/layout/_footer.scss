@@ -1,0 +1,11 @@
+footer {
+    background: $dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-color-light;
+
+    footer p {
+        text-align: center;
+    }
+}

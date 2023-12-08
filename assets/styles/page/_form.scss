@@ -1,0 +1,38 @@
+.block {
+    border-radius: 3px;
+    border: $border;
+    background-color: white;
+    box-shadow: $box-shadow;
+    padding: 1.5rem;
+    width: 50rem;
+
+    h1 {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        .form-group.form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.8rem;
+
+            textarea {
+                height: 10rem;
+            }
+
+            input,
+            select,
+            textarea {
+                border: $border;
+                border-radius: 3px;
+                padding: 0.5rem 1.5rem
+            }
+
+            ;
+        }
+    }
+}

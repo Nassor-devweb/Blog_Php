@@ -1,0 +1,11 @@
+{
+  "name": "dyma_php_blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./assets/styles/style.scss:./assets/styles/style.css"
+  },
+  "author": "",
+  "license": "ISC"
+}
