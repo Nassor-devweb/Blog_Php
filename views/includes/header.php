@@ -5,7 +5,7 @@
         <i class="fa-solid fa-sort-down"></i>
         <ul class="content-menu__liste">
             <li><i class="fa-regular fa-user"></i>Mon compte</li>
-            <li><i class="fa-regular fa-file-lines"></i>Ajouter un article</li>
+            <li><a href="formControle/getform"><i class="fa-regular fa-file-lines"></i>Ajouter un article</a></li>
             <li><i class="fa-solid fa-power-off"></i>Déconnexion</li>
         </ul>
     </div>

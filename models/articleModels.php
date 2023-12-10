@@ -44,13 +44,11 @@ function getAllComent($id_article)
     return $stmt->fetchAll();
 }
 
-function  getAllArticle_db($categorie)
+function  getAllArticle_db()
 {
     require_once("models/connection_db.php");
     $pdo = Connexion::connectDb();
-    $categorieSelcted = ($categorie === "toute") ? 1 : $categorie;
-    $stmt = $pdo->prepare("SELECT * FROM article INNER JOIN user ON user.id_user = article.id_user WHERE categorie_article = :categorie_article ORDER BY date_article ASC");
-    $stmt->bindValue(":categorie_article", "web");
+    $stmt = $pdo->prepare("SELECT * FROM article INNER JOIN user ON user.id_user = article.id_user ORDER BY date_article ASC");
     //$stmt->bindValue(":orderBy", $orderBy);
     $stmt->execute();
     $data = $stmt->fetchAll();
@@ -63,6 +61,23 @@ function  getAllArticle_db($categorie)
         $data[$key]["is_like"] = in_array(1, array_column($isLike, "id_user_like")) ? true : false;
     }
     return  $data;
+}
+
+function updateArticle_db($idArtile, $titre_article, $categorie_article, $contenu_article, $image_article)
+{
+    require_once("models/connection_db.php");
+    $pdo = Connexion::connectDb();
+    $stmt = $pdo->prepare("UPDATE article SET 
+        titre_article = :titre_article,
+        categorie_article = :categorie_article,
+        contenu_article = :contenu_article,
+        image_article = :image_article  WHERE id_article = :id_article");
+    $stmt->bindValue(":titre_article", $titre_article);
+    $stmt->bindValue(":categorie_article", $categorie_article);
+    $stmt->bindValue(":contenu_article", $contenu_article);
+    $stmt->bindValue(":image_article", $image_article);
+    $stmt->bindValue(":id_article", $idArtile);
+    $stmt->execute();
 }
 
 function dislikeArticle_db($idArticle, $idUser)

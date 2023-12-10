@@ -66,7 +66,6 @@ header .content-menu .content-menu__liste {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   min-width: 20rem;
   border-radius: 0px 0px 3px 3px;
-  display: none;
 }
 header .content-menu .content-menu__liste li {
   padding: 0.8rem 1.5rem;
@@ -189,69 +188,102 @@ footer footer p {
   padding: 0.3rem 0.6rem;
 }
 
-.content-accueil {
+.contenaireArticleCat {
+  padding: 2rem 0;
   display: flex;
-  justify-content: space-around;
-  align-content: flex-start;
-  flex-wrap: wrap;
-  padding: 2rem 25% 2rem 25%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 }
-.content-accueil .article-contenaire {
+.contenaireArticleCat .contentCategorie {
+  margin-left: 1.5rem;
+  border-radius: 0px 0px 3px 3px;
+  border: 1px solid #95a5a6;
+  background-color: white;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  padding: 2rem 0rem;
+  margin-top: 4.6rem;
+}
+.contenaireArticleCat .contentCategorie li {
+  padding: 0.8rem 2.5rem;
+}
+.contenaireArticleCat .content-accueil {
+  max-width: 110rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
   width: 100%;
+  flex: 1;
+}
+.contenaireArticleCat .content-accueil .titleCategorie {
+  width: 100%;
+  margin-bottom: 2rem;
+  font-size: 1.9rem;
+  font-family: "Open Sans", "sans-serif";
+}
+.contenaireArticleCat .content-accueil .article-contenaire {
+  width: 32%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   background-color: white;
-  margin-bottom: 2rem;
+  margin: 0 1rem 2rem 0;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  height: 470px;
   border: 1px solid rgba(206, 206, 206, 0.75);
 }
-.content-accueil .article-contenaire .img-contenaire {
-  height: 65%;
+.contenaireArticleCat .content-accueil .article-contenaire:hover .img-contenaire {
+  transform: scale(1.1);
 }
-.content-accueil .article-contenaire .img-contenaire img {
+.contenaireArticleCat .content-accueil .article-contenaire .overflow {
+  overflow: hidden;
+}
+.contenaireArticleCat .content-accueil .article-contenaire .overflow .img-contenaire {
+  height: 30rem;
+  transition: transform 1s;
+}
+.contenaireArticleCat .content-accueil .article-contenaire .overflow .img-contenaire img {
   display: block;
   height: 100%;
   width: 100%;
 }
-.content-accueil .article-contenaire .info-article {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article {
   padding: 0.5rem 1rem;
-  height: 35%;
 }
-.content-accueil .article-contenaire .info-article .info-user {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .info-user {
   margin-bottom: 1rem;
   display: flex;
   justify-content: flex-start;
 }
-.content-accueil .article-contenaire .info-article .info-user .photo_user {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .info-user .photo_user {
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;
 }
-.content-accueil .article-contenaire .info-article .info-user .info-user__date {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .info-user .info-user__date {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 0.5rem;
 }
-.content-accueil .article-contenaire .info-article .info-user .info-user__date .nom_user {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .info-user .info-user__date .nom_user {
   font-weight: 700;
 }
-.content-accueil .article-contenaire .info-article .info-user .info-user__date span {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .info-user .info-user__date span {
   font-size: 1.2rem;
 }
-.content-accueil .article-contenaire .info-article .title-article {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .title-article {
   width: 100%;
   font-family: "josefin slab", serif;
 }
-.content-accueil .article-contenaire .info-article .title-article .content-link {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .title-article .content-link {
   word-break: break-word;
   display: block;
   text-decoration: none;
   overflow: hidden;
 }
-.content-accueil .article-contenaire .info-article .title-article .content-link p {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .title-article .content-link p {
   width: 100%;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -262,54 +294,54 @@ footer footer p {
   font-size: 1.2rem;
   color: black;
 }
-.content-accueil .article-contenaire .info-article .title-article .content-link p:hover {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .title-article .content-link p:hover {
   color: #2ecc71;
   cursor: pointer;
 }
-.content-accueil .article-contenaire .info-article .title-article .title-link:hover {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .title-article .title-link:hover {
   color: #2ecc71;
   cursor: pointer;
 }
-.content-accueil .article-contenaire .info-article .title-article .content-link,
-.content-accueil .article-contenaire .info-article .title-article .title-link {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .title-article .content-link,
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .title-article .title-link {
   text-decoration: none;
   color: black;
 }
-.content-accueil .article-contenaire .info-article .contenaire-comment-btn {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .contenaire-comment-btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 1rem;
   border-top: 2px solid rgba(206, 206, 206, 0.75);
 }
-.content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire {
   display: flex;
   justify-content: flex-start;
 }
-.content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire .like-content {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire .like-content {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire .like-content .fa-heart {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire .like-content .fa-heart {
   margin-left: 0.5rem;
 }
-.content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire .like-content #heart-red {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire .like-content #heart-red {
   color: red;
 }
-.content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire .like-content #heart-black {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire .like-content #heart-black {
   color: black;
 }
-.content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire .like-content .nb_like {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire .like-content .nb_like {
   margin-left: 0.5rem;
   font-size: 1.2rem;
 }
-.content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire .message-content {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire .message-content {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire .message-content .nb_coment {
+.contenaireArticleCat .content-accueil .article-contenaire .info-article .contenaire-comment-btn .like_message-contenaire .message-content .nb_coment {
   margin-left: 0.5rem;
   font-size: 1.2rem;
 }
