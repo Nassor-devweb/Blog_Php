@@ -2,11 +2,14 @@
     padding: 2rem 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
 
+    flex: 1;
+
     .contentCategorie {
-        margin-left: 1.5rem;
+        flex-basis: 24rem;
+        margin: 0rem 2rem;
         border-radius: 0px 0px 3px 3px;
         border: $border;
         background-color: white;
@@ -20,15 +23,14 @@
     }
 
     .content-accueil {
-        max-width: 110rem;
+        //max-width: 110rem;
+        flex-basis: 1;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;
         flex-wrap: wrap;
         width: 100%;
-
-        flex: 1;
 
         .titleCategorie {
             width: 100%;

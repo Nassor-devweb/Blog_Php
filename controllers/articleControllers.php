@@ -1,4 +1,9 @@
 <?php
+
+if (!isset($_SESSION['id_user'])) {
+    header("Location:$UrlAccueil" . "userController/connexion");
+}
+
 $errors = [
     "length" => "Le tite doit contenir au moins trois caractères",
     "empty" => "Veuillez remplir tout les champs",
@@ -12,6 +17,10 @@ function save_article_control()
     global $errors;
     global $filename;
     global $UrlAccueil;
+
+    require_once("models/userModel.php");
+    $user = getUserId($_SESSION['id_user']);
+
     if (isset($_POST["title"])) {
 
         $dataArticle = filter_input_array(INPUT_POST, [
@@ -60,6 +69,9 @@ function save_article_control()
 
 function getAllArticle()
 {
+    require_once("models/userModel.php");
+    $user = getUserId($_SESSION['id_user']);
+
     require_once("models/articleModels.php");
     $allArticle = getAllArticle_db();
     //-------------Nombre d'article par catégorie--------------
@@ -87,6 +99,9 @@ function getAllArticle()
 
 function getAllArticleCat($categorie)
 {
+    require_once("models/userModel.php");
+    $user = getUserId($_SESSION['id_user']);
+
     require_once("models/articleModels.php");
     $allArticle = getAllArticle_db();
 
@@ -115,13 +130,16 @@ function getAllArticleCat($categorie)
 
 function updateArticle($idArticle)
 {
-    require("models/articleModels.php");
+    require_once("models/userModel.php");
+    $user = getUserId($_SESSION['id_user']);
+
+    require_once("models/articleModels.php");
     $dataArticle = getOneArticle_db($idArticle);
     global $errors;
     global $filename;
     global $UrlAccueil;
 
-    if (isset($_POST)) {
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $data = filter_input_array(INPUT_POST, [
             'title' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
             'category' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
@@ -192,6 +210,9 @@ function likeArticle($idArticle)
 
 function getOneArticle($id_article)
 {
+    require_once("models/userModel.php");
+    $user = getUserId($_SESSION['id_user']);
+
     require_once("models/articleModels.php");
     $article = getOneArticle_db($id_article);
     $allComent = getAllComent($id_article);

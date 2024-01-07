@@ -1,6 +1,5 @@
 <?php
 
-
 function save_article_db(string $titre_article, string $categorie_article, string $contenu_article, string $image_article, int $id_user)
 {
     require_once("models/connection_db.php");

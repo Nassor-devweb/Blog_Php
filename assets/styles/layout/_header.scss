@@ -28,7 +28,7 @@ header {
             background-color: white;
             border: $border;
             box-shadow: $box-shadow;
-            min-width: 20rem;
+            min-width: 22rem;
             border-radius: 0px 0px 3px 3px;
             //display: none;
 
@@ -40,11 +40,37 @@ header {
                 .fa-power-off {
                     margin-right: 1rem;
                 }
+
+                a {
+                    text-decoration: none;
+                    color: $text-color;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: #bdc3c7;
+                    font-weight: 700;
+                }
             }
         }
 
         .fa-solid.fa-sort-down {
             color: $text-color-light;
+        }
+
+        .connectListe {
+            display: flex;
+            justify-content: space-between;
+
+            li:nth-child(2) {
+                margin-left: 2rem;
+            }
+
+            a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
         }
     }
 }

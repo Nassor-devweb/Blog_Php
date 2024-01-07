@@ -64,7 +64,7 @@ header .content-menu .content-menu__liste {
   background-color: white;
   border: 1px solid #95a5a6;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  min-width: 20rem;
+  min-width: 22rem;
   border-radius: 0px 0px 3px 3px;
 }
 header .content-menu .content-menu__liste li {
@@ -75,8 +75,29 @@ header .content-menu .content-menu__liste li .fa-file-lines,
 header .content-menu .content-menu__liste li .fa-power-off {
   margin-right: 1rem;
 }
+header .content-menu .content-menu__liste li a {
+  text-decoration: none;
+  color: #444;
+}
+header .content-menu .content-menu__liste li:hover {
+  cursor: pointer;
+  background-color: #bdc3c7;
+  font-weight: 700;
+}
 header .content-menu .fa-solid.fa-sort-down {
   color: #fff;
+}
+header .content-menu .connectListe {
+  display: flex;
+  justify-content: space-between;
+}
+header .content-menu .connectListe li:nth-child(2) {
+  margin-left: 2rem;
+}
+header .content-menu .connectListe a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .block {
@@ -110,6 +131,12 @@ header .content-menu .fa-solid.fa-sort-down {
   border-radius: 3px;
   padding: 0.5rem 1.5rem;
 }
+.block form .error {
+  color: red;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
 
 .container {
   font-size: 1.6rem;
@@ -129,7 +156,7 @@ header .content-menu .fa-solid.fa-sort-down {
   width: 100%;
   align-self: center;
   display: flex;
-  flex-direction: center;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -192,11 +219,13 @@ footer footer p {
   padding: 2rem 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
+  flex: 1;
 }
 .contenaireArticleCat .contentCategorie {
-  margin-left: 1.5rem;
+  flex-basis: 24rem;
+  margin: 0rem 2rem;
   border-radius: 0px 0px 3px 3px;
   border: 1px solid #95a5a6;
   background-color: white;
@@ -208,14 +237,13 @@ footer footer p {
   padding: 0.8rem 2.5rem;
 }
 .contenaireArticleCat .content-accueil {
-  max-width: 110rem;
+  flex-basis: 1;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
   width: 100%;
-  flex: 1;
 }
 .contenaireArticleCat .content-accueil .titleCategorie {
   width: 100%;
@@ -395,6 +423,18 @@ footer footer p {
 }
 .content-onearticle .contenaire-article .article-info .image_article_content img {
   width: 100%;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  color: red;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

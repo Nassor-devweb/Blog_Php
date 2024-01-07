@@ -1,4 +1,8 @@
 <?php
+session_start([
+    "save_path" => __DIR__ . "/session",
+    "cookie_lifetime" => 60 * 60 * 24,
+]);
 
 $filename = $_SERVER["SCRIPT_FILENAME"];
 $filename = str_replace("index.php", "", $filename);
