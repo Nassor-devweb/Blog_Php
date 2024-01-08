@@ -8,7 +8,7 @@
     flex: 1;
 
     .contentCategorie {
-        flex-basis: 24rem;
+        flex-basis: 28rem;
         margin: 0rem 2rem;
         border-radius: 0px 0px 3px 3px;
         border: $border;
@@ -19,6 +19,16 @@
 
         li {
             padding: 0.8rem 2.5rem;
+
+            &:hover {
+                cursor: pointer;
+                //background-color: #bdc3c7;
+                font-weight: 700;
+            }
+
+            a {
+                text-decoration: none;
+            }
         }
     }
 

@@ -74,7 +74,7 @@
 
                                     </div>
                                     <div class="btn-content">
-                                        <?= ($article["id_user"] == 1) ? "<a href='formControle/updateArticle/" . $article['id_article'] . "'><button class='btn save btn-small12'>Modifier</button></a>
+                                        <?= ($article["id_user"] == $_SESSION['id_user']) ? "<a href='formControle/updateArticle/" . $article['id_article'] . "'><button class='btn save btn-small12'>Modifier</button></a>
                                 <button class='btn btn-danger btn-small12 btn-accueil'>Supprimer</button>" : "" ?>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
 
                                         </div>
                                         <div class="btn-content">
-                                            <?= ($article["id_user"] == 1) ? "<a href='formControle/updateArticle/" . $article['id_article'] . "'><button class='btn save btn-small12'>Modifier</button></a>
+                                            <?= ($article["id_user"] == $_SESSION['id_user']) ? "<a href='formControle/updateArticle/" . $article['id_article'] . "'><button class='btn save btn-small12'>Modifier</button></a>
                                 <button class='btn btn-danger btn-small12 btn-accueil'>Supprimer</button>" : "" ?>
                                         </div>
                                     </div>

@@ -224,7 +224,7 @@ footer footer p {
   flex: 1;
 }
 .contenaireArticleCat .contentCategorie {
-  flex-basis: 24rem;
+  flex-basis: 28rem;
   margin: 0rem 2rem;
   border-radius: 0px 0px 3px 3px;
   border: 1px solid #95a5a6;
@@ -235,6 +235,13 @@ footer footer p {
 }
 .contenaireArticleCat .contentCategorie li {
   padding: 0.8rem 2.5rem;
+}
+.contenaireArticleCat .contentCategorie li:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+.contenaireArticleCat .contentCategorie li a {
+  text-decoration: none;
 }
 .contenaireArticleCat .content-accueil {
   flex-basis: 1;
