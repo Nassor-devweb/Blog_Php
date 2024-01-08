@@ -8,16 +8,23 @@
 
 <body>
     <div class="container">
+        <div class="deleteConfirm deleteConfirmVisible" id=<?= isset($idArticleDelete) ? "" : "visibleConfirm" ?>>
+            <div class="deleteConfirm__content">
+                <p>Etes-vous sûr de vouloir supprimer cette article ?</p>
+                <button type="submit" class="btn btn-danger btn-accueil"><a href="">Supprimer</a></button>
+                <button class="btn save "><a href="">Annuler</a></button>
+            </div>
+        </div>
         <?php require_once('views/includes/header.php') ?>
         <div class="contenaireArticleCat">
             <div class="contentCategorie">
                 <ul>
-                    <li><a href="">Toutes catégories <?= ' (' . count($allArticle) . ')' ?></a></li>
+                    <li class=<?= (isset($_SESSION['categorie']) && $_SESSION['categorie'] == 'toute') ? "toute" : "" ?>><a href="">Toutes catégories <?= ' (' . count($allArticle) . ')' ?></a></li>
                     <?php foreach ($reduceNbPerCategory as $key => $article) : ?>
                         <?php $tmpKey = $key;
                         $tmpKey[0] = strtoupper($tmpKey[0])
                         ?>
-                        <li>
+                        <li class=<?= (isset($_SESSION['categorie']) && $_SESSION['categorie'] == $key) ? $categorie : "" ?>>
                             <a href=<?= "articleControllers/getAllArticleCat/$key" ?>>
                                 <?= $tmpKey . " (" . $article . ")" ?>
                             </a>
@@ -75,7 +82,7 @@
                                     </div>
                                     <div class="btn-content">
                                         <?= ($article["id_user"] == $_SESSION['id_user']) ? "<a href='formControle/updateArticle/" . $article['id_article'] . "'><button class='btn save btn-small12'>Modifier</button></a>
-                                <button class='btn btn-danger btn-small12 btn-accueil'>Supprimer</button>" : "" ?>
+                                <button class='btn btn-danger btn-small12 btn-accueil'><a href='articleControllers/deleteArticle/" . $article['id_article'] . "#deleteConfirm'>Supprimer</a></button>" : "" ?>
                                     </div>
                                 </div>
                             </div>
@@ -132,7 +139,7 @@
                                         </div>
                                         <div class="btn-content">
                                             <?= ($article["id_user"] == $_SESSION['id_user']) ? "<a href='formControle/updateArticle/" . $article['id_article'] . "'><button class='btn save btn-small12'>Modifier</button></a>
-                                <button class='btn btn-danger btn-small12 btn-accueil'>Supprimer</button>" : "" ?>
+                                <button class='btn btn-danger btn-small12 btn-accueil'><a href='articleControllers/deleteArticle/" . $article['id_article'] . "#deleteConfirm'>Supprimer</a></button>" : "" ?>
                                         </div>
                                     </div>
                                 </div>

@@ -144,6 +144,7 @@ header .content-menu .connectListe a {
   display: flex;
   flex-flow: column;
   color: #444;
+  position: relative;
 }
 
 .content {
@@ -183,6 +184,10 @@ footer footer p {
   margin: 0px 5px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
+.btn a {
+  color: white;
+  text-decoration: none;
+}
 
 .btn.btn-danger {
   background-color: #e74c3c;
@@ -215,6 +220,44 @@ footer footer p {
   padding: 0.3rem 0.6rem;
 }
 
+.deleteConfirm {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.deleteConfirm .deleteConfirm__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 3px;
+  border: 1px solid #95a5a6;
+  background-color: white;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  padding: 1.5rem;
+  width: 50rem;
+  height: 15rem;
+  position: absolute;
+  top: 35vh;
+  left: 35%;
+}
+.deleteConfirm .deleteConfirm__content p {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+.deleteConfirm .deleteConfirm__content a {
+  text-decoration: none;
+  color: white;
+}
+
+#visibleConfirm {
+  display: none;
+}
+
 .contenaireArticleCat {
   padding: 2rem 0;
   display: flex;
@@ -242,6 +285,22 @@ footer footer p {
 }
 .contenaireArticleCat .contentCategorie li a {
   text-decoration: none;
+}
+.contenaireArticleCat .contentCategorie .animaux {
+  font-weight: 900;
+  background-color: #bdc3c7;
+}
+.contenaireArticleCat .contentCategorie .vehicule {
+  font-weight: 900;
+  background-color: #bdc3c7;
+}
+.contenaireArticleCat .contentCategorie .web {
+  font-weight: 900;
+  background-color: #bdc3c7;
+}
+.contenaireArticleCat .contentCategorie .toute {
+  font-weight: 900;
+  background-color: #bdc3c7;
 }
 .contenaireArticleCat .content-accueil {
   flex-basis: 1;

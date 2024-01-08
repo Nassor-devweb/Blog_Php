@@ -71,6 +71,7 @@ function getAllArticle()
 {
     require_once("models/userModel.php");
     $user = getUserId($_SESSION['id_user']);
+    $_SESSION['categorie'] = "toute";
 
     require_once("models/articleModels.php");
     $allArticle = getAllArticle_db();
@@ -99,6 +100,7 @@ function getAllArticle()
 
 function getAllArticleCat($categorie)
 {
+    $_SESSION['categorie'] = $categorie;
     require_once("models/userModel.php");
     $user = getUserId($_SESSION['id_user']);
 
@@ -221,4 +223,33 @@ function getOneArticle($id_article)
     //print_r($allComent);
     //echo "</pre>";
     require_once("views/onepagearticle.php");
+}
+
+function deleteArticle($idArticleDelete)
+{
+    require_once("models/userModel.php");
+    $user = getUserId($_SESSION['id_user']);
+
+    require_once("models/articleModels.php");
+    $allArticle = getAllArticle_db();
+    //-------------Nombre d'article par catégorie--------------
+    $reduceNbPerCategory = array_reduce($allArticle, function ($acc, $curr) {
+        if (isset($acc[$curr["categorie_article"]])) {
+            $acc[$curr["categorie_article"]] += 1;
+        } else {
+            $acc[$curr["categorie_article"]] = 1;
+        }
+        return $acc;
+    }, []);
+    //------------------Article par categorie-------------------
+
+    $reduceArticlePerCategory = array_reduce($allArticle, function ($acc, $curr) {
+        if (isset($acc[$curr["categorie_article"]])) {
+            $acc[$curr["categorie_article"]] = [$curr, ...$acc[$curr["categorie_article"]]];
+        } else {
+            $acc[$curr["categorie_article"]] = [$curr];
+        }
+        return $acc;
+    }, []);
+    require_once("views/accueil.php");
 }

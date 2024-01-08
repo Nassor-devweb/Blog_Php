@@ -1,4 +1,4 @@
-<header>
+<header id="deleteConfirm">
     <div class="logo">Nas blog</div>
     <div class="content-menu">
         <?php if (isset($_SESSION['id_user'])) : ?>
