@@ -197,16 +197,15 @@ function updateArticle($idArticle)
 
 function dislikeArticle($idArticle)
 {
-
     require_once("models/articleModels.php");
-    dislikeArticle_db($idArticle, 1);
+    dislikeArticle_db($idArticle, $_SESSION['id_user']);
     getAllArticle();
 }
 
 function likeArticle($idArticle)
 {
     require_once("models/articleModels.php");
-    likeArticle_db($idArticle, 1);
+    likeArticle_db($idArticle, $_SESSION['id_user']);
     getAllArticle();
 }
 
@@ -229,8 +228,40 @@ function deleteArticle($idArticleDelete)
 {
     require_once("models/userModel.php");
     $user = getUserId($_SESSION['id_user']);
+    $categorie = $_SESSION['categorie'];
 
     require_once("models/articleModels.php");
+    $allArticle = getAllArticle_db();
+    //-------------Nombre d'article par catégorie--------------
+    $reduceNbPerCategory = array_reduce($allArticle, function ($acc, $curr) {
+        if (isset($acc[$curr["categorie_article"]])) {
+            $acc[$curr["categorie_article"]] += 1;
+        } else {
+            $acc[$curr["categorie_article"]] = 1;
+        }
+        return $acc;
+    }, []);
+    //------------------Article par categorie-------------------
+
+    $reduceArticlePerCategory = array_reduce($allArticle, function ($acc, $curr) {
+        if (isset($acc[$curr["categorie_article"]])) {
+            $acc[$curr["categorie_article"]] = [$curr, ...$acc[$curr["categorie_article"]]];
+        } else {
+            $acc[$curr["categorie_article"]] = [$curr];
+        }
+        return $acc;
+    }, []);
+    require_once("views/accueil.php");
+}
+
+function deleteArticleConfirm($idArticleConfirm)
+{
+    require_once('models/articleModels.php');
+    deleteArticleModel($idArticleConfirm);
+    $categorie = $_SESSION['categorie'];
+    require_once("models/userModel.php");
+    $user = getUserId($_SESSION['id_user']);
+
     $allArticle = getAllArticle_db();
     //-------------Nombre d'article par catégorie--------------
     $reduceNbPerCategory = array_reduce($allArticle, function ($acc, $curr) {

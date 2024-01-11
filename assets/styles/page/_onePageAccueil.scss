@@ -14,7 +14,7 @@
 
             img {
                 height: 3.2rem;
-                width: 3.2rem; 
+                width: 3.2rem;
                 border-radius: 50%;
             }
 
@@ -61,4 +61,61 @@
         }
     }
 
+    .contentFormComent {
+        margin-top: 2rem;
+        padding: 2rem 8rem;
+        border: 1px solid rgb(129, 129, 129);
+
+        textarea {
+            width: 100%;
+            min-height: 94px;
+            padding: 0.5rem;
+            border: 1px solid #95a5a6;
+
+        }
+
+        .btn-coment {
+            margin-top: 1rem;
+            margin-left: 0px;
+        }
+
+        .contentComment {
+            border-bottom: 1px solid #95a5a6;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+
+            .info-user {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                #img-user {
+                    height: 3.2rem;
+                    width: 3.2rem;
+                    border-radius: 50%;
+                }
+
+                .li-vide {
+                    margin-left: 1rem;
+
+                    div {
+                        height: 0.2rem;
+                        width: 0.2rem;
+                        border-radius: 50%;
+                        background-color: rgb(48, 45, 45);
+                    }
+                }
+
+                .info-user__nom {
+                    margin-left: 1rem;
+                }
+            }
+
+            .message-content {
+                margin: 1rem 0rem;
+            }
+
+        }
+
+    }
 }

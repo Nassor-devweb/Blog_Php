@@ -11,7 +11,7 @@
         <div class="deleteConfirm deleteConfirmVisible" id=<?= isset($idArticleDelete) ? "" : "visibleConfirm" ?>>
             <div class="deleteConfirm__content">
                 <p>Etes-vous sûr de vouloir supprimer cette article ?</p>
-                <button type="submit" class="btn btn-danger btn-accueil"><a href="">Supprimer</a></button>
+                <button type="submit" class="btn btn-danger btn-accueil"><a <?= isset($idArticleDelete) ? "href='articleControllers/deleteArticleConfirm/$idArticleDelete'" : "" ?>>Supprimer</a></button>
                 <button class="btn save "><a href="">Annuler</a></button>
             </div>
         </div>
@@ -33,7 +33,7 @@
                 </ul>
             </div>
             <div class="content-accueil">
-                <?php if (isset($categorie)) : ?>
+                <?php if (isset($categorie) && $categorie != "toute") : ?>
                     <?php
                     $tempKey = $categorie;
                     $tempKey[0] = strtoupper($tempKey[0]);

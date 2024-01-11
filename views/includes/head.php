@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="assets/styles/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
 <title>Todo</title>
-<script defer src="./public/index.js"></script>
+<script type="module" src="assets/js/index.js" defer></script>
 <script src="https://kit.fontawesome.com/245b35fcab.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

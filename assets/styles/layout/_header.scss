@@ -20,6 +20,10 @@ header {
             border-radius: 50%;
         }
 
+        .visibleNav {
+            display: none;
+        }
+
         .content-menu__liste {
             position: absolute;
             right: 0px;
@@ -30,6 +34,7 @@ header {
             box-shadow: $box-shadow;
             min-width: 22rem;
             border-radius: 0px 0px 3px 3px;
+            z-index: 1000;
             //display: none;
 
             li {

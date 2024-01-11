@@ -56,6 +56,9 @@ header .content-menu img {
   width: 3.2rem;
   border-radius: 50%;
 }
+header .content-menu .visibleNav {
+  display: none;
+}
 header .content-menu .content-menu__liste {
   position: absolute;
   right: 0px;
@@ -66,6 +69,7 @@ header .content-menu .content-menu__liste {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   min-width: 22rem;
   border-radius: 0px 0px 3px 3px;
+  z-index: 1000;
 }
 header .content-menu .content-menu__liste li {
   padding: 0.8rem 1.5rem;
@@ -489,6 +493,51 @@ footer footer p {
 }
 .content-onearticle .contenaire-article .article-info .image_article_content img {
   width: 100%;
+}
+.content-onearticle .contentFormComent {
+  margin-top: 2rem;
+  padding: 2rem 8rem;
+  border: 1px solid rgb(129, 129, 129);
+}
+.content-onearticle .contentFormComent textarea {
+  width: 100%;
+  min-height: 94px;
+  padding: 0.5rem;
+  border: 1px solid #95a5a6;
+}
+.content-onearticle .contentFormComent .btn-coment {
+  margin-top: 1rem;
+  margin-left: 0px;
+}
+.content-onearticle .contentFormComent .contentComment {
+  border-bottom: 1px solid #95a5a6;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.content-onearticle .contentFormComent .contentComment .info-user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.content-onearticle .contentFormComent .contentComment .info-user #img-user {
+  height: 3.2rem;
+  width: 3.2rem;
+  border-radius: 50%;
+}
+.content-onearticle .contentFormComent .contentComment .info-user .li-vide {
+  margin-left: 1rem;
+}
+.content-onearticle .contentFormComent .contentComment .info-user .li-vide div {
+  height: 0.2rem;
+  width: 0.2rem;
+  border-radius: 50%;
+  background-color: rgb(48, 45, 45);
+}
+.content-onearticle .contentFormComent .contentComment .info-user .info-user__nom {
+  margin-left: 1rem;
+}
+.content-onearticle .contentFormComent .contentComment .message-content {
+  margin: 1rem 0rem;
 }
 
 .login {

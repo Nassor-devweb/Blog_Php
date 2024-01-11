@@ -57,7 +57,7 @@ function  getAllArticle_db()
         $data[$key]["nb_like"] = count($nb_like) ?? 0;
         $data[$key]["nb_coment"] = count($nb_coment) ?? 0;
         $isLike = getAllLike($article["id_article"]);
-        $data[$key]["is_like"] = in_array(1, array_column($isLike, "id_user_like")) ? true : false;
+        $data[$key]["is_like"] = in_array($_SESSION['id_user'], array_column($isLike, "id_user_like")) ? true : false;
     }
     return  $data;
 }
@@ -111,4 +111,15 @@ function getOneArticle_db($id_article)
     $stmt->bindValue(":id_article", $id_article);
     $stmt->execute();
     return $stmt->fetchAll();
+}
+
+function deleteArticleModel($idArticle)
+{
+    require_once("models/connection_db.php");
+    $pdo = Connexion::connectDb();
+
+    $stmt = $pdo->prepare('DELETE FROM article WHERE id_article = :id_article');
+
+    $stmt->bindValue(':id_article', $idArticle);
+    $stmt->execute();
 }
