@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-    <base href="/dyma_php_blog/">
+    <base href="/blog_miashs/">
     <?php include_once('views/includes/head.php') ?>
 </head>
 
@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group form">
                         <label for="email_user">Email :</label>
-                        <input type="text" name="email_user" id="email_user" <?= isset($dataUser['email_user']) ? "value=" . $dataUser['email_user'] : "" ?>>
+                        <input type="email" name="email_user" id="email_user" <?= isset($dataUser['email_user']) ? "value=" . $dataUser['email_user'] : "" ?>>
                     </div>
                     <div class="form-group form" id="group">
                         <label for="password_user">Mot de passe :</label>

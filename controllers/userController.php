@@ -35,7 +35,7 @@ function inscription()
         };
 
         // Si la rêquete contient un fichier
-
+        $host = $_SERVER["SERVER_NAME"];
         if (isset($_FILES['photo_user']) && $_FILES['photo_user']['error'] == 0) {
             $extensionAllowed = ["jpg", "png", "jpeg"];
             $fileInfo = pathinfo($_FILES['photo_user']['name']);
@@ -43,15 +43,17 @@ function inscription()
             $filesBasename = $fileInfo['basename'];
 
             if (in_array($photoUserExtension, $extensionAllowed)) {
-                $host = $_SERVER["SERVER_NAME"];
+
                 $pathFile = "assets/images/avatars/" . time() . "_" . $filesBasename;
                 move_uploaded_file($_FILES["photo_user"]["tmp_name"], $filename . $pathFile);
-                $imgUrl = "http://" . $host . "/dyma_php_blog/" . $pathFile;
+                $imgUrl = "http://" . $host . "/blog_miashs/" . $pathFile;
                 $dataUser["photo_user"] = $imgUrl;
             } else {
                 $error = $errorsUser['fileExtension'];
             }
-        }
+        } else {
+            $dataUser["photo_user"] = "http://" . $host . "/blog_miashs/assets/images/avatars/default-user-avatars.jpg";
+        };
 
         // S'il n'y a pas d'erreur liée à la saisie utilisateur 
 
@@ -65,7 +67,7 @@ function inscription()
             save_user($dataUser['nom_user'], $dataUser['email_user'], $dataUser['password_user'], $dataUser['photo_user']);
 
             //Après inscription on redirige l'utilisateur vers la page connection 
-            header("Location:$UrlAccueil" . "userController/connection");
+            header("Location:$UrlAccueil" . "userController/connexion");
         } else {
             require_once('views/inscription_user.php');
         }

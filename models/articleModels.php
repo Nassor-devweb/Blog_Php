@@ -37,10 +37,11 @@ function getAllComent($id_article)
 {
     require_once("models/connection_db.php");
     $pdo = Connexion::connectDb();
-    $stmt = $pdo->prepare("SELECT * FROM coment WHERE id_article_coment = :id_article_coment");
+    $stmt = $pdo->prepare("SELECT * FROM coment INNER JOIN user ON user.id_user = id_user_coment WHERE id_article_coment = :id_article_coment");
     $stmt->bindValue(":id_article_coment", $id_article);
     $stmt->execute();
-    return $stmt->fetchAll();
+    $allComent =  $stmt->fetchAll();
+    return (count($allComent) > 0) ? $allComent : [];
 }
 
 function  getAllArticle_db()

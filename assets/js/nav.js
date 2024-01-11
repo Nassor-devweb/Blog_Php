@@ -12,8 +12,6 @@ document.addEventListener("mouseover", (e) => {
             listeContenaire.classList.add('visibleNav');
         }, 5000)
     }
-
-
 });
 
 

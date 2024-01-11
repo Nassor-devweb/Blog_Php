@@ -3,7 +3,7 @@
 
 class Connexion
 {
-    private const DNS = "mysql:host=localhost;dbname=dyma_blog";
+    private const DNS = "mysql:host=localhost;dbname=blog_miashs";
     private const USER = "root";
     private const PASSWORD = "";
     private static $connect = null;

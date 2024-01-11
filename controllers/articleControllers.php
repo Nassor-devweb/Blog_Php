@@ -48,7 +48,7 @@ function save_article_control()
                 $host = $_SERVER["SERVER_NAME"];
                 $pathFile = "assets/images/" . time() . "_" . $filesBasename;
                 move_uploaded_file($_FILES["file"]["tmp_name"], $filename . $pathFile);
-                $imgUrl = "http://" . $host . "/dyma_php_blog/" . $pathFile;
+                $imgUrl = "http://" . $host . "/blog_miashs/" . $pathFile;
                 $dataArticle["file"] = $imgUrl;
             } else {
                 $error = $errors['fileExtension'];
@@ -218,7 +218,6 @@ function getOneArticle($id_article)
     $article = getOneArticle_db($id_article);
     $allComent = getAllComent($id_article);
     //echo "<pre>";
-    //print_r($article);
     //print_r($allComent);
     //echo "</pre>";
     require_once("views/onepagearticle.php");

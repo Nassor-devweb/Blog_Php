@@ -7,7 +7,7 @@ session_start([
 $filename = $_SERVER["SCRIPT_FILENAME"];
 $filename = str_replace("index.php", "", $filename);
 $host = $_SERVER["SERVER_NAME"];
-$UrlAccueil = "http://" . $host . "/dyma_php_blog/";
+$UrlAccueil = "http://" . $host . "/blog_miashs/";
 
 
 
@@ -29,4 +29,3 @@ if (isset($_GET["action"]) && $_GET["action"]) {
     require_once("controllers/articleControllers.php");
     getAllArticle('toute');
 }
-http://localhost/dyma_php_blog/assets/images/1698946117_nas.jpg

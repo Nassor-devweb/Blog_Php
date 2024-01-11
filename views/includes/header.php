@@ -1,5 +1,5 @@
 <header id="deleteConfirm">
-    <div class="logo">Nas blog</div>
+    <div class="logo"><a href="">Nas blog</a></div>
     <div class="content-menu">
         <?php if (isset($_SESSION['id_user'])) : ?>
             <img src=<?= isset($user[0]['photo_user']) ? $user[0]['photo_user'] : "" ?> alt="">

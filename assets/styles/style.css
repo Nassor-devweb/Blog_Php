@@ -48,6 +48,10 @@ header .logo {
   font-size: 2rem;
   color: #fff;
 }
+header .logo a {
+  color: white;
+  text-decoration: none;
+}
 header .content-menu {
   position: relative;
 }

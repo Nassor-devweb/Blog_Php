@@ -9,6 +9,11 @@ header {
         font-weight: 700;
         font-size: 2rem;
         color: $text-color-light;
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
     }
 
     .content-menu {

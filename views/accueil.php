@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <base href="/dyma_php_blog/">
+    <base href="/blog_miashs/">
     <?php include_once('views/includes/head.php') ?>
 </head>
 
